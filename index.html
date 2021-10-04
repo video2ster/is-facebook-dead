@@ -23,7 +23,7 @@
   FacebookPinger.send()
   FacebookPinger.onreadystatechange = function() {
     document.getElementById("loading").style = "display:none;";
-    if (this.status == 200 || this.status = 301) {
+    if (this.status == 200 || this.status == 301) {
        // Sad, sad day
        document.getElementById("living").style = "";
     } else {
