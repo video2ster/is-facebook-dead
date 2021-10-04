@@ -47,11 +47,13 @@
  </table>
 </div>
 <script>
-  var Pinger = new XMLHttpRequest();
-  
-  Pinger.open("GET", "https://facebook.com/");
-  Pinger.send()
-  Pinger.onreadystatechange = function() {
+  var FBPinger = new XMLHttpRequest();
+  var SCPinger = new XMLHttpRequest();
+  var IGPinger = new XMLHttpRequest();
+ 
+  FBPinger.open("GET", "https://facebook.com/");
+  FBPinger.send()
+  FBPinger.onreadystatechange = function() {
     document.getElementById("loading").style = "display:none;";
     if (this.status == 200 || this.status == 301)
        document.getElementById("fbliving").style = "";
@@ -61,9 +63,9 @@
     console.log( "FACEBOOK: "+this.status.toString() );
   };
   
-  Pinger.open("GET", "https://snapchat.com/");
-  Pinger.send()
-  Pinger.onreadystatechange = function() {
+  SCPinger.open("GET", "https://snapchat.com/");
+  SCPinger.send()
+  SCPinger.onreadystatechange = function() {
     document.getElementById("loading").style = "display:none;";
     if (this.status == 200 || this.status == 301)
        document.getElementById("snapliving").style = "";
@@ -73,9 +75,9 @@
     console.log( "SNAPCHAT: "+this.status.toString() );
   };
   
-  Pinger.open("GET", "https://instagram.com/");
-  Pinger.send()
-  Pinger.onreadystatechange = function() {
+  IGPinger.open("GET", "https://instagram.com/");
+  IGPinger.send()
+  IGPinger.onreadystatechange = function() {
     document.getElementById("loading").style = "display:none;";
     if (this.status == 200 || this.status == 301)
        document.getElementById("instliving").style = "";
