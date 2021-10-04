@@ -5,6 +5,7 @@
     margin-left: 10em;
     margin-rigth: 10em;
     text-align: center;
+    color: white;
   }
 </style>
 <h2>Is Facebook Dead?</h1>
@@ -17,14 +18,12 @@
 <h1 id="living" style="display:none;"><font color="red">facebook is alive :(</font></h1>
 
 <script>
-  window.onload = function(){
-    var FacebookPinger = new XMLHttpRequest();
-    FacebookPinger.open("GET", "https://facebook.com/");
-    FacebookPinger.send()
-  };
-  xhttp.onreadystatechange = function() {
+  var FacebookPinger = new XMLHttpRequest();
+  FacebookPinger.open("GET", "https://facebook.com/");
+  FacebookPinger.send()
+  FacebookPinger.onreadystatechange = function() {
     document.getElementById("loading").style = "display:none;";
-    if (this.status == 200 | this.status = 301) {
+    if (this.status == 200 || this.status = 301) {
        // Sad, sad day
        document.getElementById("living").style = "";
     } else {
@@ -34,4 +33,5 @@
     // Print status, to be nice
     console.log( this.status );
   };
+
 </script>
