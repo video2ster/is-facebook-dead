@@ -13,9 +13,8 @@
 <title>Facebook Pingy Thingy</title>
 <h1>Detailed Report</h1>
 <p id="loading">
-  Please wait, and cross your fingers.<br/>
-  If all goes right, it'll be dead.<br/>
-  ALSO: PLEASE ENSURE YOU HAVE JAVASCRIPT ENABLED
+  We're still fetching details.<br/>
+  The following table is incomplete.
 </p>
 <br/>
 
@@ -48,6 +47,14 @@
  </table>
 </div></center>
 <script>
+  var checked = 0;
+ 
+  function idkwhattonamethis() {
+    if (checked == 3) {
+      document.getElementById("loading").style = "display:none;";
+    }
+  }
+ 
   var FBPinger = new XMLHttpRequest();
   var SCPinger = new XMLHttpRequest();
   var IGPinger = new XMLHttpRequest();
@@ -62,6 +69,9 @@
        document.getElementById("fbdead").style = "";
     // Print status, to be nice
     console.log( "FACEBOOK: "+this.status.toString() );
+    
+    checked++;
+    idkwhattonamethis();
   };
   
   SCPinger.open("GET", "https://snapchat.com/");
@@ -74,6 +84,9 @@
        document.getElementById("snapdead").style = "";
     // Print status, to be nice
     console.log( "SNAPCHAT: "+this.status.toString() );
+    
+    checked++;
+    idkwhattonamethis();
   };
   
   IGPinger.open("GET", "https://instagram.com/");
@@ -86,6 +99,9 @@
        document.getElementById("instdead").style = "";
     // Print status, to be nice
     console.log( "INSTAGRAM: "+this.status.toString() );
+   
+    checked++;
+    idkwhattonamethis();
   };
 
 </script>
