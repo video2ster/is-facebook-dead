@@ -38,10 +38,10 @@
       </td>
     </tr>
     <tr>
-      <td>Snapchat</td> 
+      <td>WhatsApp</td> 
       <td>
-        <span id="snapliving" style="display:none;"><font color="red">Alive</font></span>
-        <span id="snapdead" style="display:none;"><font color="lime">Dead</font></span>
+        <span id="waliving" style="display:none;"><font color="red">Alive</font></span>
+        <span id="wadead" style="display:none;"><font color="lime">Dead</font></span>
       </td>
     </tr>
  </table>
@@ -56,7 +56,7 @@
   }
  
   var FBPinger = new XMLHttpRequest();
-  var SCPinger = new XMLHttpRequest();
+  var wAPinger = new XMLHttpRequest();
   var IGPinger = new XMLHttpRequest();
  
   FBPinger.open("GET", "https://facebook.com/");
@@ -74,16 +74,16 @@
     idkwhattonamethis();
   };
   
-  SCPinger.open("GET", "https://snapchat.com/");
-  SCPinger.send()
-  SCPinger.onreadystatechange = function() {
+  WAPinger.open("GET", "https://snapchat.com/");
+  WAPinger.send()
+  WAPinger.onreadystatechange = function() {
     document.getElementById("loading").style = "display:none;";
     if (this.status == 200 || this.status == 301)
-       document.getElementById("snapliving").style = "";
+       document.getElementById("waliving").style = "";
     else
-       document.getElementById("snapdead").style = "";
+       document.getElementById("wadead").style = "";
     // Print status, to be nice
-    console.log( "SNAPCHAT: "+this.status.toString() );
+    console.log( "WHATSAPP: "+this.status.toString() );
     
     checked++;
     idkwhattonamethis();
